@@ -1,0 +1,29 @@
+{
+  "model_type": "XGBRegressor",
+  "features": [
+    "rainfall_24h",
+    "rainfall_cumulative_3d",
+    "rainfall_intensity_trend",
+    "soil_moisture_pct",
+    "slope_angle",
+    "elevation",
+    "seismic_activity"
+  ],
+  "metrics": {
+    "rmse": 2.8158367553755173,
+    "mae": 2.205945496114095,
+    "r2": 0.9708408954384381,
+    "accuracy": 0.9022222222222223,
+    "f1_macro": 0.8684415261391969
+  },
+  "feature_importances": {
+    "rainfall_24h": 0.1366,
+    "rainfall_cumulative_3d": 0.1405,
+    "rainfall_intensity_trend": 0.0228,
+    "soil_moisture_pct": 0.458,
+    "slope_angle": 0.1812,
+    "elevation": 0.0503,
+    "seismic_activity": 0.0105
+  },
+  "version": "1.0.0"
+}
