@@ -1,28 +1,29 @@
 #  AI-Based Early Warning & Landslide Risk Monitoring System
 
-### Smart India Hackathon 2026 — SIH 2026 Prototype
+### Smart India Hackathon 2026 | North Eastern Region (NER), India
 
-An AI-powered disaster-management platform designed to monitor, analyse, and predict **landslide risk in the North Eastern Region (NER) of India** using environmental data, machine learning, geospatial intelligence, and an interactive web-based monitoring dashboard.
+An AI-powered early-warning and landslide-risk monitoring platform designed to help monitor vulnerable regions, analyse environmental telemetry, predict landslide risk using Machine Learning, visualise risk geographically, and support faster disaster-response decisions.
 
 ---
 
 ##  Overview
 
-The North Eastern Region of India is highly vulnerable to landslides because of its mountainous terrain, intense rainfall, geological conditions, soil saturation, and changing environmental patterns.
+The **AI-Based Early Warning & Landslide Risk Monitoring System** is a full-stack disaster-management prototype developed for **Smart India Hackathon 2026**.
 
-Traditional landslide monitoring approaches often depend on manual observation, historical records, and isolated datasets. These approaches can make it difficult to identify rapidly changing risk conditions and communicate warnings in time.
+The system focuses on landslide-prone regions of India's **North Eastern Region (NER)**, where factors such as heavy rainfall, soil saturation, steep slopes, seismic activity, terrain conditions, and other environmental parameters can contribute to landslide hazards.
 
-This project proposes an integrated **AI-driven Landslide Risk Monitoring and Early Warning System** that brings multiple sources of information together into a single platform.
+The platform combines:
 
-The system is designed to:
+* 🌧️ Environmental telemetry
+* 🤖 Machine Learning
+* 🗺️ Geospatial visualisation
+* 📊 Real-time-style monitoring
+* 🚨 Emergency alert management
+* 📈 Historical trend analysis
+* 🎛️ Interactive ML simulation
+* 🖥️ Web-based decision-support dashboard
 
-* Monitor environmental and terrain-related parameters.
-* Analyse historical and generated landslide-related datasets.
-* Predict potential landslide risk using Machine Learning.
-* Visualise risk information through an interactive dashboard.
-* Identify high-risk locations.
-* Support early-warning decision making.
-* Provide an extensible architecture for future IoT sensor and satellite-data integration.
+The goal is to transform raw environmental data into **understandable risk information and actionable early warnings**.
 
 ---
 
@@ -30,801 +31,1232 @@ The system is designed to:
 
 ### AI-Based Early Warning and Landslide Risk Monitoring System in NER
 
-The North Eastern Region of India experiences frequent landslides due to the combination of:
+The North Eastern Region of India is geographically vulnerable to landslides due to:
 
 * Heavy and prolonged rainfall
 * Steep slopes
 * Soil saturation
-* Geological instability
-* Ground displacement
-* Deforestation and land-use changes
-* Infrastructure development
-* Climate variability
+* Geological conditions
+* Seismic activity
+* Terrain characteristics
+* Environmental changes
+* Human-induced land-use changes
 
-A major challenge is the absence of a unified system capable of combining environmental observations, historical information, machine-learning predictions, and geographic visualisation into a single decision-support platform.
+Traditional monitoring systems can involve manual observation and fragmented data sources, making it difficult to continuously assess changing risk conditions across large geographical areas.
 
-### The objective
-
-Develop an intelligent platform capable of transforming environmental and terrain data into actionable **landslide-risk information and early warnings**.
+There is a need for an intelligent platform capable of combining environmental observations, Machine Learning, geospatial information, and alert mechanisms into a unified monitoring system.
 
 ---
 
 #  Proposed Solution
 
-Our solution follows a **Data → AI → Risk → Visualisation → Warning** approach.
+Our solution follows a complete:
+
+> **Data → Processing → AI → Risk Assessment → Visualisation → Alert → Decision Support**
+
+workflow.
 
 ```text
-Environmental / Historical Data
-            │
-            ▼
-      Data Processing
-            │
-            ▼
-      Feature Extraction
-            │
-            ▼
-      Machine Learning
-            │
-            ▼
-      Risk Classification
-            │
-            ▼
-   GIS / Web Dashboard
-            │
-            ▼
-   Early Warning & Action
+┌──────────────────────────┐
+│ Environmental Telemetry  │
+│ Weather / Terrain / IoT  │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│ Data Collection &        │
+│ Preprocessing            │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│ Feature Engineering      │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│ XGBoost Machine Learning │
+│ Risk Prediction Model    │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│ Landslide Risk Score     │
+│ Low / Moderate / High /  │
+│ Critical                 │
+└────────────┬─────────────┘
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+┌─────────────┐ ┌──────────────┐
+│ GIS / Map   │ │ Alert Engine │
+│ Dashboard   │ │              │
+└──────┬──────┘ └──────┬───────┘
+       │               │
+       └───────┬───────┘
+               ▼
+      ┌──────────────────┐
+      │ Decision Support │
+      │     Dashboard    │
+      └──────────────────┘
 ```
-
-The platform can be extended to accept data from multiple sources including:
-
-* IoT environmental sensors
-* Rainfall measurements
-* Soil-moisture measurements
-* Terrain information
-* Historical landslide records
-* Satellite/remote-sensing data
-* Weather information
-* Geographic coordinates
 
 ---
 
 #  Key Features
 
-## 1. AI-Based Risk Prediction
+## 1.  Regional Risk Monitoring
 
-The Machine Learning component analyses relevant environmental and terrain features and determines the corresponding landslide-risk category.
+The dashboard provides an interactive map focused on the **North Eastern Region of India**.
 
-The system can classify locations into risk levels such as:
+The system currently demonstrates monitoring across **25 active nodes/locations**.
+
+Risk levels are represented using intuitive categories:
+
+| Risk Level  | Meaning                         |
+| ----------- | ------------------------------- |
+| 🟢 Low      | Low immediate risk              |
+| 🟡 Moderate | Conditions require monitoring   |
+| 🟠 High     | Significant landslide potential |
+| 🔴 Critical | Immediate attention required    |
+
+Critical locations are highlighted with a warning/pulsing visual effect on the map.
+
+---
+
+# 2.  AI-Based Landslide Risk Prediction
+
+The system uses a pre-trained **XGBoost Machine Learning model** to estimate landslide risk.
+
+The model processes environmental and terrain-related features and produces a risk prediction.
+
+Example input parameters include:
+
+* Rainfall over the last 24 hours
+* Soil moisture saturation
+* Slope angle
+* Seismic trigger
+* Other environmental/terrain features
+
+The prediction is converted into an understandable risk score and risk category.
 
 ```text
-LOW
-  ↓
-MODERATE
-  ↓
-HIGH
-  ↓
+Environmental Parameters
+          │
+          ▼
+    Feature Processing
+          │
+          ▼
+     XGBoost Model
+          │
+          ▼
+     Risk Prediction
+          │
+          ▼
+      Risk Score
+          │
+          ▼
+ ┌────────┼────────┐
+ ▼        ▼        ▼
+LOW   MODERATE    HIGH
+                   │
+                   ▼
+                CRITICAL
+```
+
+---
+
+# 3.  Location Deep Analytics
+
+Users can select a monitored location directly from the map or location list.
+
+The analytics drawer provides detailed information such as:
+
+* Landslide Hazard Score
+* Risk classification
+* Rainfall over 24 hours
+* Soil moisture percentage
+* Slope angle
+* Seismic trigger status
+* ML feature importance
+* Risk drivers
+* 7-day precipitation trend
+* 7-day soil moisture trend
+
+Example:
+
+```text
+Hazard Score
+80.33 / 100
+
+Risk Level
 CRITICAL
 ```
 
-This enables the platform to move beyond simply displaying raw sensor values and instead provide an interpretable risk assessment.
+This provides more information than simply showing a risk label.
 
 ---
 
-## 2. Real-Time Monitoring Architecture
+# 4.  ML Feature Importance
 
-The system is designed around continuous data ingestion.
+The dashboard provides an interpretation of the ML prediction by displaying the contribution of important features.
 
-Environmental information can flow from sensors or external data sources into the backend where it can be processed and analysed.
+This improves model transparency by helping users understand **why a location has been classified as high or critical risk**.
 
 ```text
-Sensors / APIs
-      │
-      ▼
- Data Collection
-      │
-      ▼
- Backend Processing
-      │
-      ▼
- Risk Engine
-      │
-      ▼
- Dashboard
+Environmental Features
+          │
+          ▼
+     XGBoost Model
+          │
+          ▼
+    Feature Importance
+          │
+          ▼
+    Risk Drivers Chart
 ```
 
-This architecture allows additional sensor stations and external APIs to be incorporated without redesigning the complete platform.
+This makes the system more useful as a **decision-support tool**, rather than a black-box prediction system.
 
 ---
 
-## 3. Interactive Risk Dashboard
+# 5.  Historical Trend Analysis
 
-The web dashboard acts as the primary interface for monitoring the region.
+The location analytics interface provides historical environmental trends.
 
-It can provide:
+The prototype displays:
 
-* Current risk information
-* Risk classification
-* Environmental parameters
-* Location-based information
-* Historical trends
-* Alerts
-* Model predictions
-* Visual analytics
+* 7-day precipitation trends
+* 7-day soil moisture trends
 
-The dashboard is designed to help administrators and decision-makers understand the current situation quickly.
+This allows users to identify whether environmental conditions are:
 
----
-
-## 4. Geospatial Risk Visualisation
-
-Geospatial information is an important component of landslide monitoring.
-
-The platform can represent:
-
-* High-risk locations
-* Sensor stations
-* Affected regions
-* Risk zones
-* Geographic coordinates
-* Environmental observations
-
-This enables users to identify **where** the risk is concentrated rather than looking only at numerical data.
+* Increasing
+* Decreasing
+* Stable
+* Approaching potentially dangerous conditions
 
 ---
 
-## 5. Early Warning System
+# 6.  Emergency Alert Dispatch
 
-The AI prediction layer can be connected to an alert-generation mechanism.
+The platform includes an emergency alert mechanism.
+
+When a high-risk or critical condition is identified, an authorised user can dispatch an alert.
+
+The prototype simulates notification dispatch and records the event in the database.
+
+The Alert Feed records information such as:
+
+* Alert severity
+* Timestamp
+* Affected district
+* Recipient details
+* Dispatch information
 
 ```text
-Risk Score
-    │
-    ├── Low ───────────────► Monitor
-    │
-    ├── Moderate ──────────► Advisory
-    │
-    ├── High ──────────────► Warning
-    │
-    └── Critical ──────────► Immediate Alert
+Critical Risk Detected
+          │
+          ▼
+    Admin Review
+          │
+          ▼
+   Dispatch Alert
+          │
+          ▼
+   Alert Recorded
+          │
+          ▼
+      Alert Feed
 ```
 
-The architecture can later be integrated with:
-
-* SMS notifications
-* Push notifications
-* Email alerts
-* Government control rooms
-* Local authorities
-* Community warning systems
-
 ---
 
-## 6. Historical Data Analysis
+# 7.  Interactive ML Simulator
 
-Historical landslide information can be used to identify relationships between environmental conditions and previous landslide events.
+The **ML Simulator** allows users to test the prediction model under different environmental conditions.
 
-This helps the system:
+Users can modify parameters such as:
 
-* Understand historical patterns
-* Generate training datasets
-* Identify important features
-* Improve prediction models
-* Compare current conditions with historical conditions
+* Rainfall (24h)
+* Soil moisture saturation
+* Slope angle
 
----
-
-## 7. Machine Learning Pipeline
-
-The ML pipeline follows a structured workflow:
+For example:
 
 ```text
-Dataset
-   │
-   ▼
-Data Cleaning
-   │
-   ▼
-Feature Engineering
-   │
-   ▼
-Train / Test Split
-   │
-   ▼
-Model Training
-   │
-   ▼
-Model Evaluation
-   │
-   ▼
-Prediction
-   │
-   ▼
-Risk Classification
+Rainfall:              180 mm
+Soil Moisture:          92 %
+Slope Angle:             45°
 ```
 
-The repository contains the machine-learning components under the project ML module.
+The system passes these values through the trained XGBoost model and generates a risk prediction.
+
+This feature is particularly useful for:
+
+* Demonstrations
+* Testing
+* Scenario analysis
+* Understanding model behaviour
+* SIH judging/demo sessions
 
 ---
 
 #  System Architecture
 
-The proposed architecture follows a layered design.
+The platform follows a modular, layered architecture.
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                     USER / ADMIN LAYER                      │
-│                                                             │
-│        Web Dashboard │ GIS Map │ Alerts │ Analytics         │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       APPLICATION LAYER                     │
-│                                                             │
-│     Dashboard Services │ Alert Management │ User Access     │
-│     Data Visualisation │ Risk Analysis │ Reporting          │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                         AI / ML LAYER                       │
-│                                                             │
-│    Feature Processing → ML Model → Risk Prediction          │
-│                                                             │
-│       Low │ Moderate │ High │ Critical                     │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                     DATA PROCESSING LAYER                   │
-│                                                             │
-│  Cleaning │ Transformation │ Feature Extraction │ Validation │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       DATA INGESTION LAYER                   │
-│                                                             │
-│ Sensors │ Weather APIs │ Historical Data │ Satellite Data   │
-│                         │                                   │
-│                  Future IoT Integration                      │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
- Complete System Workflow
-
-The complete workflow can be represented as:
-
-```text
-                  ┌─────────────────────┐
-                  │  Environmental Data │
-                  │     Collection      │
-                  └──────────┬──────────┘
-                             │
-                             ▼
-                  ┌─────────────────────┐
-                  │   Data Validation   │
-                  │   & Preprocessing   │
-                  └──────────┬──────────┘
-                             │
-                             ▼
-                  ┌─────────────────────┐
-                  │ Feature Extraction  │
-                  └──────────┬──────────┘
-                             │
-                             ▼
-                  ┌─────────────────────┐
-                  │   Machine Learning  │
-                  │   Risk Prediction   │
-                  └──────────┬──────────┘
-                             │
-                             ▼
-                  ┌─────────────────────┐
-                  │  Risk Classification│
-                  └──────────┬──────────┘
-                             │
-                 ┌───────────┴───────────┐
-                 ▼                       ▼
-       ┌──────────────────┐    ┌──────────────────┐
-       │ GIS Visualization│    │ Alert Generation │
-       └────────┬─────────┘    └────────┬─────────┘
-                │                       │
-                └───────────┬───────────┘
-                            ▼
-                  ┌─────────────────────┐
-                  │   Decision Support  │
-                  │      Dashboard      │
-                  └─────────────────────┘
+                         ┌───────────────────────┐
+                         │       USERS           │
+                         │ Admin / Authorities   │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                    ┌────────────────────────────┐
+                    │      REACT FRONTEND        │
+                    │                            │
+                    │ Dashboard                  │
+                    │ GIS Map                    │
+                    │ Analytics                  │
+                    │ ML Simulator               │
+                    │ Alert Feed                 │
+                    │ Admin Panel                │
+                    └──────────────┬─────────────┘
+                                   │
+                              REST API
+                                   │
+                                   ▼
+                    ┌────────────────────────────┐
+                    │      FASTAPI BACKEND       │
+                    │                            │
+                    │ API Endpoints              │
+                    │ Data Ingestion             │
+                    │ Risk Services              │
+                    │ Alert Management           │
+                    │ Background Scheduler        │
+                    └───────┬──────────┬─────────┘
+                            │          │
+                 ┌──────────┘          └──────────┐
+                 ▼                                ▼
+       ┌───────────────────┐            ┌──────────────────┐
+       │     DATABASE      │            │   ML ENGINE      │
+       │                   │            │                  │
+       │ SQLite / PostGIS  │            │ XGBoost Model    │
+       │ Locations         │            │ Feature Analysis │
+       │ Telemetry         │            │ Risk Prediction  │
+       │ Alerts            │            └──────────────────┘
+       │ Historical Data   │
+       └───────────────────┘
 ```
 
 ---
 
-#  AI / Machine Learning Workflow
+#  Complete System Workflow
 
-The machine-learning subsystem works through the following stages.
-
-### Step 1 — Data Collection
-
-Relevant environmental and terrain attributes are collected.
-
-Possible parameters include:
-
-* Rainfall
-* Soil moisture
-* Elevation
-* Slope
-* Ground movement
-* Temperature
-* Historical landslide occurrence
-* Geographic location
-
-### Step 2 — Data Preprocessing
-
-Raw data is cleaned and transformed into a consistent format.
-
-Operations may include:
-
-* Missing-value handling
-* Data normalization
-* Outlier handling
-* Feature selection
-* Data validation
-
-### Step 3 — Feature Engineering
-
-Important variables are extracted and transformed into model-ready features.
-
-### Step 4 — Model Training
-
-The processed dataset is used to train a Machine Learning model capable of identifying patterns associated with landslide risk.
-
-### Step 5 — Prediction
-
-New environmental observations are passed through the trained model.
-
-### Step 6 — Risk Classification
-
-The model output is converted into an understandable risk category.
+The complete workflow of the platform is:
 
 ```text
-Input Data
-    │
-    ▼
-ML Model
-    │
-    ▼
-Risk Score / Prediction
-    │
-    ▼
-Risk Category
-    │
-    ├── LOW
-    ├── MODERATE
-    ├── HIGH
-    └── CRITICAL
+┌─────────────────────────┐
+│ 1. Data Collection      │
+│                         │
+│ Environmental Data      │
+│ Historical Data         │
+│ Synthetic Telemetry     │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 2. Data Preprocessing   │
+│                         │
+│ Cleaning                │
+│ Validation              │
+│ Transformation          │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 3. Feature Engineering  │
+│                         │
+│ Rainfall                │
+│ Soil Moisture           │
+│ Slope                   │
+│ Seismic Conditions      │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 4. ML Risk Prediction   │
+│                         │
+│ XGBoost Model           │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 5. Risk Classification  │
+│                         │
+│ Low                     │
+│ Moderate                │
+│ High                    │
+│ Critical                │
+└────────────┬────────────┘
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+┌─────────────┐ ┌──────────────┐
+│ 6. Map &    │ │ 7. Alert     │
+│ Dashboard   │ │ Generation   │
+└──────┬──────┘ └──────┬───────┘
+       │               │
+       └───────┬───────┘
+               ▼
+       ┌─────────────────┐
+       │ 8. Decision     │
+       │ Support         │
+       └─────────────────┘
 ```
 
 ---
 
-#  Data Flow
+#  Machine Learning Pipeline
+
+The ML subsystem consists of a complete training and prediction workflow.
 
 ```text
-       DATA SOURCES
-            │
-            ▼
-┌──────────────────────┐
-│ Data Collection Layer│
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Preprocessing Engine │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Feature Engineering  │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│   ML Prediction      │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Risk Assessment      │
-└──────────┬───────────┘
-           │
-           ▼
-┌────────────────────────────┐
-│ Dashboard / GIS / Alerts   │
-└────────────────────────────┘
+Synthetic / Historical Dataset
+              │
+              ▼
+       Data Generation
+              │
+              ▼
+       Data Preprocessing
+              │
+              ▼
+      Feature Engineering
+              │
+              ▼
+       Model Training
+              │
+              ▼
+       XGBoost Model
+              │
+              ▼
+       Model Evaluation
+              │
+              ▼
+       Model Artifacts
+              │
+              ▼
+      Backend Integration
+              │
+              ▼
+       Risk Prediction
+```
+
+The repository contains the ML training pipeline inside:
+
+```text
+landslide-risk-ner/ml/
+```
+
+Important ML files include:
+
+```text
+ml/
+├── synthetic_landslide_dataset.csv
+├── train_model.py
+├── training_notebook.ipynb
+├── data_generator.py
+└── model_artifacts/
 ```
 
 ---
 
-#  Platform Architecture
+#  Synthetic Data Generation
 
-The prototype follows a modular architecture so that each component can evolve independently.
+The prototype includes a synthetic telemetry generation pipeline for development and demonstration purposes.
 
-```text
-                 FRONTEND
-                    │
-                    │ HTTP / REST
-                    ▼
-                 BACKEND
-                    │
-          ┌─────────┴─────────┐
-          │                   │
-          ▼                   ▼
-     DATABASE             AI ENGINE
-          │                   │
-          │                   │
-          └─────────┬─────────┘
-                    │
-                    ▼
-             RISK / ALERT DATA
-                    │
-                    ▼
-                DASHBOARD
+The system can generate:
+
+> **90 days of synthetic telemetry for 25 NER locations**
+
+This enables the ML and monitoring system to be tested without requiring a complete live sensor infrastructure.
+
+To regenerate the data:
+
+```bash
+cd ml
+python data_generator.py
 ```
 
-This separation improves:
+---
 
-* Maintainability
-* Scalability
-* Testing
-* Modularity
-* Future IoT integration
-* Future cloud deployment
+#  Model Training
+
+The XGBoost model can be retrained using:
+
+```bash
+cd ml
+python train_model.py
+```
+
+The trained model artifacts are stored in:
+
+```text
+ml/model_artifacts/
+```
+
+The prototype training workflow reports an approximate:
+
+```text
+R² ≈ 0.97
+```
+
+> **Note:** This value applies to the prototype's synthetic/training setup and should not be interpreted as real-world predictive accuracy. Real deployment would require validated field data, appropriate validation methodology, and domain-specific evaluation.
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
+* React
+* Vite
+* JavaScript / TypeScript
+* Interactive dashboard components
+* GIS/map visualisation
+* Data visualisation
+
+## Backend
+
+* Python
+* FastAPI
+* Uvicorn
+* REST APIs
+* Background task scheduling
+
+## Machine Learning
+
+* Python
+* XGBoost
+* Pandas
+* NumPy
+* Scikit-learn
+* Jupyter Notebook
+
+## Database
+
+### Local Development
+
+* SQLite
+
+### Containerized / Extended Deployment
+
+* PostgreSQL
+* PostGIS
+
+PostGIS enables the system to support spatial/geographic database operations.
+
+## Infrastructure
+
+* Docker
+* Docker Compose
+* Nginx
+* Git
+* GitHub
 
 ---
 
 #  Project Structure
 
-The major project components are organized around separate functional responsibilities.
-
 ```text
-sih project 2026/
+SIH-2026-Prototype/
 │
-├── landslide-risk-ner/
-│   │
-│   ├── backend/
-│   │   └── ...
-│   │
-│   ├── ml/
-│   │   ├── synthetic_landslide_dataset.csv
-│   │   ├── train_model.py
-│   │   └── training_notebook.ipynb
-│   │
-│   └── ...
-│
-└── README.md
+└── landslide-risk-ner/
+    │
+    ├── backend/
+    │   ├── app/
+    │   │   ├── main.py
+    │   │   └── ...
+    │   ├── landslide_dev.db
+    │   └── ...
+    │
+    ├── frontend/
+    │   ├── src/
+    │   ├── public/
+    │   ├── package.json
+    │   └── ...
+    │
+    ├── ml/
+    │   ├── data_generator.py
+    │   ├── synthetic_landslide_dataset.csv
+    │   ├── train_model.py
+    │   ├── training_notebook.ipynb
+    │   └── model_artifacts/
+    │
+    ├── docker-compose.yml
+    └── ...
 ```
-
-### ML Module
-
-The `ml` directory contains the machine-learning development pipeline.
-
-| File                              | Purpose                                      |
-| --------------------------------- | -------------------------------------------- |
-| `synthetic_landslide_dataset.csv` | Dataset used for ML experimentation/training |
-| `train_model.py`                  | Python training/prediction pipeline          |
-| `training_notebook.ipynb`         | Interactive ML experimentation and analysis  |
 
 ---
 
-#  Technology Stack
+#  Local Development
 
-The system is designed using modern web, data-science, and AI technologies.
+## Prerequisites
 
-### Frontend
+Before running the project on Windows, install:
 
-* Modern web application framework
-* HTML5
-* CSS3
-* JavaScript / TypeScript
-* Interactive data visualisation
-* GIS visualisation
+### Python
 
-### Backend
+**Python 3.10+**
 
-* Python-based backend components
-* REST API architecture
-* Data processing services
-* Risk-analysis services
+The prototype has been tested with modern Python versions.
 
-### AI / Machine Learning
+### Node.js
 
-* Python
-* Jupyter Notebook
-* Pandas
-* NumPy
-* Scikit-learn
-* Machine Learning classification
+**Node.js 18+**
 
-### Data
+### Optional
 
-* CSV datasets
-* Historical landslide information
-* Environmental parameters
-* Geospatial information
+**Docker Desktop**
 
-### Development
+Docker is optional for local development but required if you want to run the complete containerized architecture with PostgreSQL/PostGIS.
 
-* Git
-* GitHub
-* VS Code / compatible IDE
-* Python virtual environments
+---
+
+#  Method 1 — Local Development Mode
+
+This is the **fastest and easiest method** for development and demonstrations.
+
+It uses:
+
+* SQLite
+* FastAPI
+* React
+* Vite
+* Local ML model
+
+---
+
+## Step 1 — Navigate to the Project
+
+Open PowerShell or Command Prompt:
+
+```powershell
+cd "C:\Users\nashe\OneDrive\Desktop\sih project 2026\landslide-risk-ner"
+```
+
+---
+
+# Step 2 — Generate Data and Train the Model
+
+This step is optional because model artifacts are already included.
+
+If you want to regenerate the synthetic dataset and retrain:
+
+```powershell
+cd ml
+```
+
+Generate synthetic telemetry:
+
+```powershell
+python data_generator.py
+```
+
+Train the XGBoost model:
+
+```powershell
+python train_model.py
+```
+
+Return to the project root:
+
+```powershell
+cd ..
+```
+
+Expected output:
+
+```text
+Model artifacts successfully saved to ...
+```
+
+---
+
+# Step 3 — Start FastAPI Backend
+
+Open **Terminal 1**.
+
+Navigate to:
+
+```powershell
+cd "C:\Users\nashe\OneDrive\Desktop\sih project 2026\landslide-risk-ner\backend"
+```
+
+Start the FastAPI server:
+
+```powershell
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Expected startup process:
+
+```text
+[FastAPI App] Initializing database tables...
+[Ingestion Service] Seeding initial database with NER locations and historical data...
+[FastAPI App] Background task scheduler started.
+
+INFO: Application startup complete.
+INFO: Uvicorn running on http://0.0.0.0:8000
+```
+
+### Verify Backend
+
+Open:
+
+```text
+http://localhost:8000/docs
+```
+
+You should see the interactive **FastAPI Swagger API documentation**.
+
+---
+
+# Step 4 — Start React Frontend
+
+Open **Terminal 2**.
+
+Navigate to:
+
+```powershell
+cd "C:\Users\nashe\OneDrive\Desktop\sih project 2026\landslide-risk-ner\frontend"
+```
+
+Install dependencies if required:
+
+```powershell
+npm install
+```
+
+Start the Vite development server:
+
+```powershell
+npm run dev
+```
+
+Expected output:
+
+```text
+VITE v5.4.21 ready
+
+➜ Local: http://localhost:3000/
+```
+
+Open:
+
+```text
+http://localhost:3000/
+```
+
+The landslide monitoring dashboard should now be available.
+
+---
+
+#  Method 2 — Docker Compose
+
+For a fully containerized setup, Docker Desktop can be used.
+
+Navigate to the project root:
+
+```powershell
+cd "C:\Users\nashe\OneDrive\Desktop\sih project 2026\landslide-risk-ner"
+```
+
+Run:
+
+```powershell
+docker-compose up --build
+```
+
+This starts the complete containerized environment.
+
+### Services
+
+| Service              |   Port |
+| -------------------- | -----: |
+| PostgreSQL + PostGIS | `5432` |
+| FastAPI Backend      | `8000` |
+| React + Nginx        | `3000` |
+
+Frontend:
+
+```text
+http://localhost:3000
+```
+
+Backend:
+
+```text
+http://localhost:8000
+```
+
+Swagger:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+#  Prototype Demo Checklist
+
+The following workflow can be used during an SIH presentation or demonstration.
+
+---
+
+## 1. Open the Dashboard
+
+Navigate to:
+
+```text
+http://localhost:3000
+```
+
+Verify the summary metrics including:
+
+* **25 Active Nodes**
+* High/Critical warnings
+* Dispatched alerts
+* Average Risk Index
+
+---
+
+## 2. Explore the NER Risk Map
+
+The map is centered on the **North Eastern Region of India**.
+
+Observe the colour-coded risk markers:
+
+```text
+🟢 Green    → Low
+🟡 Yellow   → Moderate
+🟠 Orange   → High
+🔴 Red      → Critical
+```
+
+Critical markers use a warning/pulsing visual effect.
+
+---
+
+# 3. Open Location Analytics
+
+Click a red/orange marker or select a location from the location list.
+
+Example locations include:
+
+* Cherrapunji
+* Shillong Peak
+
+The analytics drawer displays:
+
+### Hazard Score
+
+Example:
+
+```text
+80.33 / 100
+Critical Risk
+```
+
+### Telemetry
+
+* Rainfall — 24h
+* Soil Moisture
+* Slope Angle
+* Seismic Trigger
+
+### AI Analytics
+
+* ML feature importance
+* Risk-driver percentage chart
+
+### Historical Trends
+
+* 7-day precipitation
+* 7-day soil moisture
+
+---
+
+# 4. Dispatch an Emergency Alert
+
+From the location drawer or **Admin Panel**:
+
+```text
+Dispatch Alert
+```
+
+The prototype simulates alert dispatch and records it in the database.
+
+Then open:
+
+```text
+Alert Feed
+```
+
+Verify:
+
+* Severity
+* Timestamp
+* Affected district
+* Recipient information
+* Dispatch status
+
+---
+
+# 5. Test the ML Simulator
+
+Open:
+
+```text
+ML Simulator
+```
+
+Set severe environmental conditions such as:
+
+```text
+Rainfall 24h          → 180 mm
+Soil Moisture         → 92 %
+Slope Angle           → 45°
+```
+
+Click:
+
+```text
+Calculate Risk Score
+```
+
+The XGBoost model generates a risk prediction and displays the feature breakdown.
+
+The demonstration is designed to show how severe environmental conditions can result in a **Critical Risk** prediction.
 
 ---
 
 #  Security Considerations
 
-The system is intended to follow security-conscious development practices.
+For development and deployment, the following security practices should be followed:
 
-Important principles include:
-
-* Never expose API keys in source code.
-* Use environment variables for secrets.
-* Validate incoming data.
-* Sanitize user input.
-* Protect backend endpoints.
-* Implement authentication and authorization where required.
-* Maintain audit logs for important actions.
-* Restrict access to administrative functionality.
-
-Sensitive configuration files such as `.env` should **not** be committed to the repository.
+* Do not commit `.env` files.
+* Do not expose API keys.
+* Store secrets using environment variables.
+* Validate API input.
+* Implement authentication for administrative endpoints.
+* Restrict alert-dispatch functionality to authorised users.
+* Use HTTPS in production.
+* Protect database credentials.
+* Apply appropriate CORS policies.
+* Maintain audit logs for critical operations.
 
 ---
 
-#  Scalability
+#  Production Architecture
 
-The architecture is designed so that the prototype can evolve into a larger regional monitoring platform.
-
-### Current Prototype
+The prototype can be extended from local development into a cloud-based monitoring platform.
 
 ```text
-Prototype Dataset
-       ↓
-ML Model
-       ↓
-Backend
-       ↓
-Web Dashboard
-```
-
-### Future Scalable Architecture
-
-```text
-        IoT Sensor Network
-                │
-                ▼
-        IoT Gateway / MQTT
-                │
-                ▼
-        Cloud Data Platform
-                │
-        ┌───────┴────────┐
-        ▼                ▼
-   Stream Processing   Database
-        │                │
-        └───────┬────────┘
-                ▼
-          AI/ML Engine
-                │
-        ┌───────┴────────┐
-        ▼                ▼
-   Risk Prediction    Historical
-                      Analytics
-        │
-        ▼
-     GIS Dashboard
-        │
-        ▼
- Early Warning System
-        │
- ┌──────┼─────────┐
- ▼      ▼         ▼
-SMS   Mobile    Control
-      App       Centre
+                    ┌──────────────────────┐
+                    │   IoT Sensor Nodes   │
+                    │ Rain / Soil / Tilt / │
+                    │ Seismic / Weather   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ IoT Gateway / MQTT   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Cloud Data Ingestion │
+                    └──────────┬───────────┘
+                               │
+                     ┌─────────┴─────────┐
+                     ▼                   ▼
+              ┌─────────────┐     ┌──────────────┐
+              │ PostgreSQL  │     │ Stream/Event │
+              │ + PostGIS   │     │ Processing   │
+              └──────┬──────┘     └──────┬───────┘
+                     │                   │
+                     └─────────┬─────────┘
+                               ▼
+                    ┌──────────────────────┐
+                    │ AI / ML Risk Engine  │
+                    │                      │
+                    │ XGBoost / Advanced   │
+                    │ ML Models            │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Risk Assessment      │
+                    └──────────┬───────────┘
+                               │
+                    ┌──────────┴──────────┐
+                    ▼                     ▼
+             ┌──────────────┐      ┌──────────────┐
+             │ GIS Dashboard│      │ Alert Engine │
+             └──────┬───────┘      └──────┬───────┘
+                    │                     │
+                    └──────────┬──────────┘
+                               ▼
+                    ┌──────────────────────┐
+                    │ Authorities / Users  │
+                    └──────────────────────┘
 ```
 
 ---
 
 #  Future Enhancements
 
-The prototype can be extended with:
+The prototype can be expanded significantly.
 
-### 1. Real IoT Sensor Integration
+## 1. Real IoT Integration
 
-Deploy physical sensor stations measuring:
+Integrate physical sensors such as:
 
-* Rainfall
-* Soil moisture
-* Ground displacement
-* Tilt
-* Pore-water pressure
+* Rain gauges
+* Soil moisture sensors
+* Tilt sensors
+* Accelerometers
+* Ground displacement sensors
+* Pore-water pressure sensors
+* Seismic sensors
 
-### 2. Satellite Integration
+---
 
-Integrate satellite and remote-sensing data for:
+## 2. Satellite and Remote Sensing
 
-* Vegetation monitoring
+Integrate satellite data for:
+
 * Terrain analysis
 * Surface deformation
+* Vegetation monitoring
 * Land-use changes
-* NDVI analysis
+* Rainfall estimation
+* Remote-sensing based hazard indicators
 
-### 3. Real-Time Streaming
+---
 
-Introduce:
+## 3. Real-Time Data Streaming
+
+Future versions can introduce technologies such as:
 
 * MQTT
 * Apache Kafka
-* Cloud streaming
-* Event-driven processing
+* Cloud event streaming
+* Real-time processing pipelines
 
-for continuous environmental data.
+---
 
-### 4. Advanced AI Models
+## 4. Advanced Machine Learning
 
-Future versions can investigate:
+Future models could include:
 
 * Random Forest
-* Gradient Boosting
 * XGBoost
 * LightGBM
+* Gradient Boosting
 * Neural Networks
-* Time-series models
-* Ensemble learning
+* Time-series forecasting
+* Ensemble models
 
-### 5. Mobile Application
+---
 
-Provide risk information and warnings directly to:
+## 5. Mobile Application
 
-* Citizens
-* Field officers
-* Disaster-response teams
-* Local administrators
+A mobile application could provide:
 
-### 6. Multilingual Support
+* Real-time alerts
+* Location-based warnings
+* Safety instructions
+* Citizen reporting
+* Emergency contacts
 
-Support regional languages to make warnings accessible to local communities.
+---
 
-### 7. Automated Emergency Response
+## 6. Multilingual Alerts
 
-The system could eventually integrate with emergency-response infrastructure to automatically escalate critical events.
+Warnings could be provided in regional languages to improve accessibility for local communities.
+
+---
+
+## 7. Government Control-Room Integration
+
+The system can eventually integrate with disaster-management control rooms to provide:
+
+* Regional risk maps
+* Automated alerts
+* Historical analytics
+* Incident management
+* Resource allocation
+* Emergency response coordination
 
 ---
 
 #  Expected Impact
 
-The proposed platform aims to transform landslide management from a primarily reactive process into a more **data-driven and proactive system**.
+The platform aims to shift landslide management from a primarily reactive approach toward a **proactive, data-driven early-warning approach**.
 
-### Benefits
-
-**For Government Authorities**
+### Government Authorities
 
 * Centralised monitoring
 * Faster risk assessment
 * Regional situational awareness
 * Better resource allocation
 
-**For Disaster Management Teams**
+### Disaster Response Teams
 
 * Location-specific risk information
-* Early warnings
-* Historical analytics
+* Early warning support
+* Historical environmental analytics
 * Faster response planning
 
-**For Local Communities**
+### Local Communities
 
-* Timely warnings
-* Easier access to risk information
-* Improved awareness
+* Earlier warnings
+* Better awareness
+* Location-specific information
 * Potential reduction in loss of life and property
 
 ---
 
-#  Prototype Demonstration Workflow
+#  Why This System Is Different
 
-A typical demonstration can follow this sequence:
-
-```text
-1. Open Dashboard
-       ↓
-2. Select / View Region
-       ↓
-3. Inspect Environmental Data
-       ↓
-4. Run AI Risk Prediction
-       ↓
-5. Receive Risk Classification
-       ↓
-6. View Risk on Map
-       ↓
-7. Generate / Display Alert
-       ↓
-8. Analyse Historical Information
-```
-
-This demonstrates the complete journey from **raw environmental information to actionable risk intelligence**.
-
----
-
-#  Why This Approach?
-
-Traditional monitoring:
+Traditional approach:
 
 ```text
-Data → Human Analysis → Decision
+Environmental Data
+        ↓
+Manual Analysis
+        ↓
+Decision
+        ↓
+Response
 ```
 
 Our proposed approach:
 
 ```text
-Data
-  ↓
+Environmental Data
+        ↓
 Automated Processing
-  ↓
-AI Analysis
-  ↓
+        ↓
+Machine Learning
+        ↓
 Risk Prediction
-  ↓
+        ↓
 GIS Visualisation
-  ↓
+        ↓
 Early Warning
-  ↓
-Decision
+        ↓
+Decision Support
+        ↓
+Response
 ```
 
-The goal is not to replace domain experts.
-
-Instead, the system acts as a **decision-support platform** that gives authorities faster access to relevant information.
+The system is designed to assist human decision-makers rather than replace domain experts.
 
 ---
 
 #  Smart India Hackathon 2026
 
-This project is developed as a prototype for **Smart India Hackathon 2026**, addressing the challenge of developing an AI-based early-warning and landslide-risk monitoring solution for India's North Eastern Region.
+This project has been developed as a prototype for:
 
-The platform combines:
+## Smart India Hackathon 2026
 
-> **Artificial Intelligence + Machine Learning + GIS + Environmental Data + Web Technology + Early Warning**
+### Focus Area
 
-to create a unified disaster-management solution.
+**AI-Based Early Warning and Landslide Risk Monitoring System in the North Eastern Region of India**
+
+The project combines:
+
+```text
+Artificial Intelligence
+        +
+Machine Learning
+        +
+GIS
+        +
+Environmental Data
+        +
+Web Technology
+        +
+Disaster Management
+        +
+Early Warning
+```
+
+to create a unified platform for intelligent landslide-risk monitoring.
 
 ---
 
-#  Contribution
+#  Contributing
 
-Contributions and suggestions are welcome.
+Contributions, improvements, and suggestions are welcome.
 
-To contribute:
+### Clone the repository
 
 ```bash
-# Fork the repository
+git clone https://github.com/Ayaanzaroon78/SIH-2026-Prototype.git
+```
 
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/SIH-2026-Prototype.git
+### Enter the project
 
-# Create a feature branch
+```bash
+cd SIH-2026-Prototype
+```
+
+### Create a feature branch
+
+```bash
 git checkout -b feature/your-feature
+```
 
-# Make your changes
+### Commit your changes
 
-# Commit
+```bash
 git add .
 git commit -m "Add: your feature"
-
-# Push
-git push origin feature/your-feature
-
-# Open a Pull Request
 ```
+
+### Push the branch
+
+```bash
+git push origin feature/your-feature
+```
+
+Then create a Pull Request.
+
+---
+
+#  Prototype Disclaimer
+
+This project is a **prototype developed for Smart India Hackathon 2026**.
+
+The current ML demonstration uses synthetic/generated telemetry for development and demonstration.
+
+A production-grade disaster-management system would require:
+
+* Validated real-world sensor data
+* Extensive historical landslide datasets
+* Domain-expert validation
+* Field testing
+* Continuous model evaluation
+* Robust communication infrastructure
+* Government/disaster-management integration
+* Appropriate safety and reliability procedures
+
+The prototype's ML results should therefore **not be interpreted as operational disaster warnings**.
 
 ---
 
@@ -832,22 +1264,20 @@ git push origin feature/your-feature
 
 This project is currently developed as an **SIH 2026 prototype**.
 
-A formal open-source license can be added based on the team's intended distribution and usage requirements.
+A formal open-source license can be added according to the team's intended distribution and usage requirements.
 
 ---
 
-#  Project
+#  Repository
 
-**SIH 2026 Prototype**
-
-GitHub Repository:
+**GitHub:**
 
 https://github.com/Ayaanzaroon78/SIH-2026-Prototype
 
 ---
 
-##  Vision
+#  Vision
 
 > **From environmental data to intelligent early warning — enabling safer communities through AI-driven disaster intelligence.**
 
-**Built for Smart India Hackathon 2026.**
+### Built for Smart India Hackathon 2026.
