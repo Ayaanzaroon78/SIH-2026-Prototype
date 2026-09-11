@@ -1,0 +1,51 @@
+# Vercel deployment exclusions
+# These files/folders are excluded to keep the deployment bundle lean and secure.
+
+# Python cache and compiled bytecode
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Virtual environments
+.venv
+venv
+env
+.env
+
+# Local database files (Vercel uses /tmp or an external DB)
+backend/landslide_dev.db
+*.db
+*.sqlite3
+
+# Docker files (not needed for Vercel)
+**/Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+
+# Frontend dev artifacts (Vercel builds from source)
+frontend/node_modules
+
+# Git metadata
+.git
+.gitignore
+
+# IDE / OS files
+.vscode
+.idea
+**/.DS_Store
+**/Thumbs.db
+
+# Test files and coverage reports
+**/tests
+**/test_*
+**/__tests__
+**/coverage
+**/.pytest_cache
+
+# Alembic migration versions (optional — include if you need auto-migrations)
+# backend/alembic/versions
+
+# Logs
+*.log
+logs/

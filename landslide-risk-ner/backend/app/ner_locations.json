@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Shillong Peak",
+    "district": "East Khasi Hills",
+    "state": "Meghalaya",
+    "latitude": 25.5788,
+    "longitude": 91.8933,
+    "elevation": 1525,
+    "slope_angle": 34.5
+  },
+  {
+    "name": "Cherrapunji (Sohra)",
+    "district": "East Khasi Hills",
+    "state": "Meghalaya",
+    "latitude": 25.2702,
+    "longitude": 91.7323,
+    "elevation": 1430,
+    "slope_angle": 42.0
+  },
+  {
+    "name": "Gangtok Ridge",
+    "district": "East Sikkim",
+    "state": "Sikkim",
+    "latitude": 27.3389,
+    "longitude": 88.6065,
+    "elevation": 1650,
+    "slope_angle": 38.0
+  },
+  {
+    "name": "Mangan North Slope",
+    "district": "North Sikkim",
+    "state": "Sikkim",
+    "latitude": 27.5042,
+    "longitude": 88.5364,
+    "elevation": 1310,
+    "slope_angle": 48.5
+  },
+  {
+    "name": "Itanagar Hills",
+    "district": "Papum Pare",
+    "state": "Arunachal Pradesh",
+    "latitude": 27.0844,
+    "longitude": 93.6053,
+    "elevation": 320,
+    "slope_angle": 28.0
+  },
+  {
+    "name": "Tawang Pass",
+    "district": "Tawang",
+    "state": "Arunachal Pradesh",
+    "latitude": 27.5861,
+    "longitude": 91.8594,
+    "elevation": 3048,
+    "slope_angle": 44.0
+  },
+  {
+    "name": "Aizawl Ridge",
+    "district": "Aizawl",
+    "state": "Mizoram",
+    "latitude": 23.7271,
+    "longitude": 92.7176,
+    "elevation": 1132,
+    "slope_angle": 40.2
+  },
+  {
+    "name": "Lunglei South",
+    "district": "Lunglei",
+    "state": "Mizoram",
+    "latitude": 22.8879,
+    "longitude": 92.7336,
+    "elevation": 1222,
+    "slope_angle": 36.0
+  },
+  {
+    "name": "Kohima Town Slope",
+    "district": "Kohima",
+    "state": "Nagaland",
+    "latitude": 25.6751,
+    "longitude": 94.1086,
+    "elevation": 1444,
+    "slope_angle": 35.5
+  },
+  {
+    "name": "Mokokchung Heights",
+    "district": "Mokokchung",
+    "state": "Nagaland",
+    "latitude": 26.3161,
+    "longitude": 94.5244,
+    "elevation": 1325,
+    "slope_angle": 31.0
+  },
+  {
+    "name": "Imphal West Foothills",
+    "district": "Imphal West",
+    "state": "Manipur",
+    "latitude": 24.817,
+    "longitude": 93.9368,
+    "elevation": 786,
+    "slope_angle": 22.0
+  },
+  {
+    "name": "Ukhrul East Range",
+    "district": "Ukhrul",
+    "state": "Manipur",
+    "latitude": 25.1167,
+    "longitude": 94.3667,
+    "elevation": 1662,
+    "slope_angle": 39.8
+  },
+  {
+    "name": "Agartala Tillas",
+    "district": "West Tripura",
+    "state": "Tripura",
+    "latitude": 23.8315,
+    "longitude": 91.2868,
+    "elevation": 128,
+    "slope_angle": 18.5
+  },
+  {
+    "name": "Dharmanagar Hills",
+    "district": "North Tripura",
+    "state": "Tripura",
+    "latitude": 24.38,
+    "longitude": 92.16,
+    "elevation": 115,
+    "slope_angle": 19.0
+  },
+  {
+    "name": "Haflong Hill Station",
+    "district": "Dima Hasao",
+    "state": "Assam",
+    "latitude": 25.1667,
+    "longitude": 93.0167,
+    "elevation": 512,
+    "slope_angle": 37.2
+  },
+  {
+    "name": "Diphu Reserve Slope",
+    "district": "Karbi Anglong",
+    "state": "Assam",
+    "latitude": 25.84,
+    "longitude": 93.43,
+    "elevation": 186,
+    "slope_angle": 24.0
+  },
+  {
+    "name": "Darjeeling Mall Road",
+    "district": "Darjeeling",
+    "state": "West Bengal (NER Zone)",
+    "latitude": 27.041,
+    "longitude": 88.2663,
+    "elevation": 2045,
+    "slope_angle": 45.0
+  },
+  {
+    "name": "Kalimpong Viewpoint",
+    "district": "Kalimpong",
+    "state": "West Bengal (NER Zone)",
+    "latitude": 27.06,
+    "longitude": 88.47,
+    "elevation": 1250,
+    "slope_angle": 41.5
+  },
+  {
+    "name": "Nongpoh Highway Belt",
+    "district": "Ri-Bhoi",
+    "state": "Meghalaya",
+    "latitude": 25.9,
+    "longitude": 91.88,
+    "elevation": 485,
+    "slope_angle": 29.0
+  },
+  {
+    "name": "Jowai Plateau Edge",
+    "district": "West Jaintia Hills",
+    "state": "Meghalaya",
+    "latitude": 25.45,
+    "longitude": 92.2,
+    "elevation": 1380,
+    "slope_angle": 33.0
+  },
+  {
+    "name": "Namchi Helipad Hill",
+    "district": "South Sikkim",
+    "state": "Sikkim",
+    "latitude": 27.1667,
+    "longitude": 88.35,
+    "elevation": 1315,
+    "slope_angle": 37.5
+  },
+  {
+    "name": "Bomdila Pass",
+    "district": "West Kameng",
+    "state": "Arunachal Pradesh",
+    "latitude": 27.25,
+    "longitude": 92.4,
+    "elevation": 2217,
+    "slope_angle": 43.2
+  },
+  {
+    "name": "Champhai Border Ridge",
+    "district": "Champhai",
+    "state": "Mizoram",
+    "latitude": 23.47,
+    "longitude": 93.32,
+    "elevation": 1678,
+    "slope_angle": 35.0
+  },
+  {
+    "name": "Wokha Mountain",
+    "district": "Wokha",
+    "state": "Nagaland",
+    "latitude": 26.1,
+    "longitude": 94.26,
+    "elevation": 1313,
+    "slope_angle": 32.8
+  },
+  {
+    "name": "Senapati Valley Slope",
+    "district": "Senapati",
+    "state": "Manipur",
+    "latitude": 25.26,
+    "longitude": 94.01,
+    "elevation": 1245,
+    "slope_angle": 36.4
+  }
+]

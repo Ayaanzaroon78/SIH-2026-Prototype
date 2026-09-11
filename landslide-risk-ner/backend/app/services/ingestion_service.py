@@ -19,6 +19,10 @@ def seed_database_if_empty(db: Session):
     # Load location profiles
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../ml"))
     loc_file = os.path.join(base_dir, "ner_locations.json")
+    alt_loc_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../ner_locations.json"))
+
+    if os.path.exists(alt_loc_file):
+        loc_file = alt_loc_file
 
     if os.path.exists(loc_file):
         with open(loc_file, "r") as f:
